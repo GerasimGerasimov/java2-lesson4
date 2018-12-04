@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Button?>
+
+<GridPane fx:controller="chat.controller.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center"
+          hgap="8" vgap="8"
+         
+    >
+     <!--gridLinesVisible="true" -->
+    <padding>
+         <Insets bottom="24.0" left="8.0" right ="8.0" top="24.0"/>
+    </padding>
+    <Label style="-fx-font: NORMAL 20 Tahoma;  -fx-rotate: 270;"
+            translateY="100"
+            wrapText="true"
+            text="Address Book"
+            GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" 
+            />
+    <TextField fx:id="userMsg" 
+               promptText="Enter a message"
+               GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.hgrow="ALWAYS"
+               onAction="#handleSendButtonAction"/>
+    <TextArea fx:id="chatField" 
+              GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.columnSpan="2"
+              wrapText="true" 
+              style = "-fx-vbar-policy:always;"
+               />
+    <Button maxHeight="1000" maxWidth="1000" text="Send"
+            GridPane.columnIndex="2" GridPane.rowIndex="1"
+            onAction="#handleSendButtonAction" />
+    <columnConstraints>
+        <ColumnConstraints percentWidth="20.0" />
+        <ColumnConstraints percentWidth="60.0" />
+        <ColumnConstraints percentWidth="20.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="100"/>
+        <RowConstraints maxHeight="80.0" minHeight="0.0" vgrow="ALWAYS" />
+    </rowConstraints>
+</GridPane>
